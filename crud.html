@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Memories Countries</title>
+  <style>
+    html, body {
+        height: 100%;
+        width: 100%;
+        font-family: 'Poppins', sans-serif;
+        background: linear-gradient(135deg, #005cb8, #750000);
+        color: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        position: relative; 
+    }
+    body {
+            animation: backgroundAnimation 10s infinite alternate;
+        }
+        @keyframes backgroundAnimation {
+            0% { background: linear-gradient(135deg, #005cb8, #750000); }
+            100% { background: linear-gradient(135deg, #750000, #005cb8); }
+        }
+
+        
+        .region-info {
+            margin-top: 20px;
+            color: #f3d008;
+            font-size: 1em;
+        }
+
+        #likeButton {
+            display: none;
+            position: relative;
+            padding-left: 25px;
+        }
+        #likeButton::before {
+            content: "♥";
+            color: red;
+            position: absolute;
+            left: 10px;
+            font-size: 1.2em;
+        }
+    .MainWrapper {
+        width: 100%;
+        max-width: 500px;
+        padding: 20px;
+        background: rgba(0, 0, 0, 0.6);
+        border-radius: 8px;
+        box-shadow: 0px 0px 15px rgb(9, 44, 243);
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .form-group {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .form-group label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+
+    .form-group input, .form-group textarea {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+
+    button {
+        width: 100px;
+        margin: 10px 5px;
+        padding: 10px;
+        background-color: #ffffff;
+        color: #005cb8;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    button:hover {
+        background-color: #00ffe5;
+        color: #000000;
+    }
+
+    a {
+        color: #ffffff;
+        text-decoration: underline;
+        margin-top: 20px;
+        display: inline-block;
+    }
+
+    table {
+        width: 100%;
+        margin-top: 20px;
+        border-collapse: collapse;
+    }
+
+    table, th, td {
+        border: 1px solid #4800ff;
+    }
+
+    th, td {
+        padding: 10px;
+        text-align: center;
+    }
+
+    tr:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .back-button-wrapper {
+        position: absolute; 
+        top: 20px;
+        right: 20px; 
+    }
+  </style>
+</head>
+<body>
+    <div class="back-button-wrapper">
+        <button onclick="window.location.href='index.html'">Back to Home</button>
+    </div>
+    <div class="MainWrapper">
+        <h1>Memories of Your Country</h1>
+        <form>
+            <div class="form-group">
+                <label>Notes Name</label>
+                <input id="fileName" type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>About Country</label>
+                <textarea id="fileContents" class="form-control" rows="5"></textarea>
+            </div>
+        </form>
+        <button id="btnCreate" class="btn btn-default">Create</button>
+        <button id="btnRead" class="btn btn-default">Read</button>
+        <button id="btnUpdate" class="btn btn-default">Update</button>
+  
+       
+        <table id="fileTable">
+            <thead>
+                <tr>
+                    <th>Diary Name</th>
+                    <th>Remove Diary</th>
+                </tr>
+            </thead>
+            <tbody>
+               
+            </tbody>
+        </table>
+    </div>
+    <script src="crud.js"></script>
+</body>
+</html>

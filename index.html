@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explorers of The World</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            height: 100%;
+            width: 100%;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #005cb8, #750000);
+            color: #ffffffd9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            overflow: hidden;
+        }
+        body {
+            animation: backgroundAnimation 5s infinite alternate;
+        }
+        @keyframes backgroundAnimation {
+            0% { background: linear-gradient(135deg, #005cb8, #750000); }
+            100% { background: linear-gradient(135deg, #750000, #005cb8); }
+        }
+
+        .region-info {
+            margin-top: 20px;
+            color: #f3d008;
+            font-size: 1em;
+        }
+
+        #likeButton {
+            display: none;
+            position: relative;
+            padding-left: 25px;
+        }
+        #likeButton::before {
+            content: "♥";
+            color: red;
+            position: absolute;
+            left: 10px;
+            font-size: 1.2em;
+        }
+        .top-links {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+
+        .top-links a {
+            color: #f3d008;
+            font-weight: bold;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+
+        .top-links a:hover {
+            color: #fff;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        #city_input {
+            padding: 12px;
+            font-size: 1em;
+            width: 80%;
+            max-width: 300px;
+            border: none;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+
+        button {
+            padding: 12px 20px;
+            font-size: 1em;
+            cursor: pointer;
+            background-color: #000000;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #00ffe5;
+        }
+
+        .output {
+            width: 80%;
+            max-width: 500px;
+            padding: 20px;
+            background-color: linear-gradient(135deg, #005cb8, #750000);
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin-top: 20px;
+            max-height: 300px;
+            overflow: hidden; 
+        }
+
+
+        .flag-coat-of-arms {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        #flagImage, #coatOfArmsImage {
+            width: 100px;
+            height: auto;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="top-links">
+        <a href="homepage.html">Regions of The World</a> |
+        <a href="favourites.html">Favorite Countries</a> |
+        <a href="crud.html">Countries Memories</a>
+    </div>
+
+    <h1>·.★·.·´¯`·.·★         𝓦𝓞𝓡𝓛𝓓 𝓔𝓧𝓟𝓛𝓞𝓡𝓔𝓡          ★·.·´¯`·.·★.·</h1>
+    <p> 𝕎𝕖𝕝𝕔𝕠𝕞𝕖 𝕥𝕠 𝕚-𝕊𝕖𝕒𝕣𝕔𝕙. 𝔽𝕖𝕖𝕝𝕤 𝔽𝕣𝕖𝕖 𝕥𝕠 𝕤𝕖𝕒𝕣𝕔𝕙 𝕗𝕠𝕣 𝕪𝕠𝕦𝕣 𝕔𝕠𝕦𝕟𝕥𝕣𝕪 .</p>
+    <h1></h1>
+
+    <input type="text" id="city_input" placeholder="Enter city name">
+    <button onclick="buttonClicked()">Enter City Name</button>
+
+    <div class="output">
+        <p id="demo1"></p>
+        <p id="demo2"></p>
+        <p id="demo3"></p>
+        <p id="demo4"></p>
+        <p id="demo5"></p>
+        <p id="demo6"></p>
+        <p id="demo7"></p>
+        <p id="demo8"></p>
+        <p id="demo9"></p>
+        <p id="demo10"></p>
+        <p id="demo11"></p>
+        <p id="demo12"></p>
+        <button id="likeButton" style="display:none;" onclick="addToFavorites()">Like this country</button>
+    </div>
+
+    <div class="flag-coat-of-arms">
+        <img id="flagImage" alt="Country Flag">
+        <img id="coatOfArmsImage" alt="Coat of Arms">
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
